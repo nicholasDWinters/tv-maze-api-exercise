@@ -19,7 +19,7 @@
  */
 async function searchShows(query) {
   try {
-    const res = await axios.get(`http://api.tvmaze.com/search/shows`, { params: { q: query } });
+    const res = await axios.get(`https://api.tvmaze.com/search/shows`, { params: { q: query } });
     const defaultImg = 'https://store-images.s-microsoft.com/image/apps.65316.13510798887490672.6e1ebb25-96c8-4504-b714-1f7cbca3c5ad.f9514a23-1eb8-4916-a18e-99b1a9817d15?mode=scale&q=90&h=300&w=300';
     let showArray = [];
 
@@ -134,7 +134,7 @@ async function getEpisodes(id) {
   // TODO: return array-of-episode-info, as described in docstring above/
   try {
 
-    const res = await axios.get(`http://api.tvmaze.com/shows/${id}/episodes`);
+    const res = await axios.get(`https://api.tvmaze.com/shows/${id}/episodes`);
     let episodesArr = [];
     for (let i = 0; i < res.data.length; i++) {
       let id = res.data[i].id;
